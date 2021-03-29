@@ -1,17 +1,36 @@
 var parolaUtente = prompt('Inserisci la parola');
 console.log(parolaUtente);
 
-palindroma(parolaUtente);
+if ( resPalindromo == true ) {
+    alert('la parola è palindroma');
+} else {
+    alert('la parola non è palindroma');
+}
 
-function palindroma(parolaUno) {
-    var parolaAttuale = "";
 
-    for (var j = parolaUno.lenght - 1; j >= 0; j--) {
+//funzione
 
-        parolaAttuale = parolaAttuale + parolaUno[j];
+palindromo(parolaUtente);
+
+function palindromo(parolaAnalizzare) {
+    console.log(parolaAnalizzare);
+    var resPalindromo;
+    resPalindromo = false;
+
+    var parolaContrario = '';
+
+    for ( var i = parolaAnalizzare.lenght - 1; i >= 0; i-- ) {
+        var lettera = parolaAnalizzare[i];
+        console.log(lettera);
+
+        parolaContrario = parolaContrario + lettera;
     }
-    console.log(parolaAttuale);
+    console.log(parolaContrario);
 
-    return parolaUno;
+    if ( parolaAnalizzare == parolaContrario ) {
+        resPalindromo = true;
+    }
+
+    return resPalindromo;   
 }
 

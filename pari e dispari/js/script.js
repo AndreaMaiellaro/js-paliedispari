@@ -1,40 +1,36 @@
 var sceltaUtente = prompt('Scegli pari o dispari');
 console.log(sceltaUtente);
 
-var numUtente = prompt('Inserisci un numero tra 1 e 5');
+var numUtente = parseInt( prompt('Inserisci un numero tra 1 e 5') );
 console.log(numUtente);
-numUtente = parseInt(numUtente);
 
-numPc();
-
-function numPc( numeroCasualePC ) {
-    var numeroCasualePC = parseInt(numeroCasualePC)
-    numeroCasualePC = Math.floor(Math.random() * 5) +1;
+function numPc() {
+    var numeroCasualePC = Math.floor(Math.random() * 5) +1;
     return numeroCasualePC;
 }
 
 var numeroCasualePC = numPc();
 console.log(numeroCasualePC);
 
-sommaNum();
-var risultato;
-
-function sommaNum( numUtente, numeroCasualePC ) {
-    var risultato = numUtente + numeroCasualePC ;
+function sommaNum( num1, num2 ) {
+    var risultato = num1 + num2 ;
     return risultato;
 }
 
-var somma = sommaNum();
+var somma = sommaNum(numUtente, numeroCasualePC);
 console.log(somma);
-console.log(risultato);
 
-// while ( sceltaUtente = 'pari' ) {
-
-// }
-
-// if (risultato % 2 == 0) {
-//     var pari = true
-//     alert('hai vinto')
-// } else {
+if (somma % 2 == 0) {
+    if (sceltaUtente == 'pari') {
+        alert('hai vinto');
+    } else {
+        alert('hai perso');
+    }   
+} else {
+    if (sceltaUtente == 'dispari') {
+        alert('hai vinto');
+    } else {
+        alert('hai perso');
+    }
     
-// }
+}
